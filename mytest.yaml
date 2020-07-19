@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cflNginxTest
+  name: test1
   labels:
     app: nginx
     user: cfl
@@ -9,14 +9,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: cflNginxTest
+      app: test1
   template:
     metadata:
       labels:
-        app: cflNginxTest
+        app: test1
     spec:
       containers:
-      - name: cflNginxTest
+      - name: test1
         image: test
         ports:
         - containerPort: 80
