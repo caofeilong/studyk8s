@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: cflNginxTest
-        image: <Image>
+        image: test
         ports:
-        - containerPort: <Port>
+        - containerPort: 80

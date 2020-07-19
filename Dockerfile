@@ -1,8 +1,9 @@
 FROM nginx:1.18.0
-WORKDIR /app
-COPY  src/ /app
-RUN echo  cflmk >> index.html
-CMD tail -f index.html
+# WORKDIR /app
+COPY  src/ /usr/share/nginx/html
+# EXPOSE port
+# RUN echo  cflmk >> index.html
+# CMD tail -f index.html
 
 
 ## MAINTAINER caofeilong@qq.com
