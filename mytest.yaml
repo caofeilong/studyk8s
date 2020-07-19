@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: test1
   labels:
@@ -17,6 +18,6 @@ spec:
     spec:
       containers:
       - name: test1
-        image: test
+        image: registry.cn-beijing.aliyuncs.com/cfl-test/test-nginx
         ports:
         - containerPort: 80
