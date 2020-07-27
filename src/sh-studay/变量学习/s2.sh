@@ -35,7 +35,7 @@
 a=caofeilong
 b=caofeilong1
 
-if [ $a == $b ] ; then
+if [ $a != $b ] ; then
  echo s1.sh is file
 else
  echo is not file
