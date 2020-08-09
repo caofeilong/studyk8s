@@ -25,6 +25,9 @@ kubectl apply -f  mytest-svc-nodeport.yaml
 
 ## ingress-nginx 用法
 
+安装
+`kubectl apply -f src/nginx-ingress.yaml `
+
 ## istio 用法
 
 
