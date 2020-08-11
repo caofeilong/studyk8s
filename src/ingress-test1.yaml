@@ -40,7 +40,7 @@ metadata:
   name: nginx-ingress-test
 spec:
   rules:
-  - host: www.helloingress.com
+  - host: www.cfl.com
     http:
       paths:
       - path: /
