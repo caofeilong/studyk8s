@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: app1
+  labels:
+    app: app1
+    user: cfl
+spec:
+  replicas: 2
+  selector:  # deplyment 选择的 pod 标签 
+    matchLabels:
+      app: app1
+  template:    # Template描述将要创建的pods。
+    metadata:   
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: registry.cn-beijing.aliyuncs.com/cfl-test/app1:1.0.0
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc-app1
+spec:
+  selector:
+    name: app1
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress-app1
+spec:
+  rules:
+  - host: www.app1.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-svc-app1
+          servicePort: 80 
