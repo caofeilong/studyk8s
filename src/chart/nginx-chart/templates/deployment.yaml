@@ -1,0 +1,23 @@
+apiVsersion: apps/v1
+kind: Deployment
+
+matedate:
+  name: helm-test
+  babels:
+    app: helm-test
+    user: cfl
+spec:
+  relicas: 2
+  selector:
+    matchLabels:
+      app: helm-test
+  template:
+    matedata:
+      labels: 
+        app: helm-test
+    spec:
+      containers:
+      - name: heml-test
+        image: registry.cn-beijing.aliyuncs.com/cfl-test/app1:1.0.0
+        ports:
+        - containerPort: 80
