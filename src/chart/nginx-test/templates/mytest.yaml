@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: test1
+  name: helm-test-dep
   labels:
     app: nginx
     user: cfl
@@ -10,14 +10,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: test1
+      app: helm-test
   template:
     metadata:
       labels:
-        app: test1
+        app: helm-test
     spec:
       containers:
-      - name: test1
+      - name: helm-test
         image: registry.cn-beijing.aliyuncs.com/cfl-test/test-nginx
         ports:
         - containerPort: 80
